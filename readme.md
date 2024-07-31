@@ -161,7 +161,3 @@ You can explicitly convert a variable from one data type to another using type c
 ?>
 ```
 
-Understanding PHP data types helps in managing and manipulating data effectively. For more detailed information, you can visit the [PHP documentation on data types](https://www.php.net/manual/en/language.types.php).
-```
-
-Feel free to tailor this to fit your needs or expand on any of the sections!
