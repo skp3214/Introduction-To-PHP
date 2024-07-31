@@ -40,6 +40,7 @@
     var_dump($negativeNum);
     var_dump($person);
     var_dump($newPerson);
+    echo gettype($negativeNum);
     ?>
 </body>
 </html>
