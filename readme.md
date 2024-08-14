@@ -654,3 +654,177 @@ echo $circle->getArea(); // Outputs: 78.539816339745
 - **Interfaces** define a contract that implementing classes must adhere to.
 
 Understanding these concepts helps in designing and implementing robust and maintainable PHP applications using object-oriented programming principles.
+
+## Functions
+In PHP, functions are essential building blocks of code that allow you to encapsulate logic, reuse code, and improve the readability and maintainability of your programs. Here’s an overview of functions in PHP, including their definitions, types, and common uses:
+
+### **1. Defining Functions**
+
+A function in PHP is defined using the `function` keyword, followed by the function name, parentheses for parameters, and a block of code enclosed in curly braces.
+
+```php
+function sayHello() {
+    echo "Hello, World!";
+}
+```
+
+### **2. Calling Functions**
+
+You call a function by using its name followed by parentheses.
+
+```php
+sayHello(); // Output: Hello, World!
+```
+
+### **3. Function Parameters**
+
+Functions can accept parameters, which are values passed to the function when it is called. Parameters are defined within the parentheses.
+
+```php
+function greet($name) {
+    echo "Hello, " . $name;
+}
+
+greet("Alice"); // Output: Hello, Alice
+```
+
+### **4. Returning Values**
+
+Functions can return values using the `return` keyword. This allows you to output a result from the function.
+
+```php
+function add($a, $b) {
+    return $a + $b;
+}
+
+$result = add(5, 3);
+echo $result; // Output: 8
+```
+
+### **5. Default Parameters**
+
+You can set default values for function parameters. These values are used if no argument is provided for that parameter.
+
+```php
+function multiply($a, $b = 1) {
+    return $a * $b;
+}
+
+echo multiply(5);    // Output: 5 (using default value 1 for $b)
+echo multiply(5, 2); // Output: 10
+```
+
+### **6. Variable-Length Argument Lists**
+
+PHP functions can accept a variable number of arguments using `...` (variadic) syntax.
+
+```php
+function sum(...$numbers) {
+    return array_sum($numbers);
+}
+
+echo sum(1, 2, 3, 4); // Output: 10
+```
+
+### **7. Anonymous Functions**
+
+Also known as closures or lambda functions, these are functions without a name and are often used for short-term tasks or as arguments to other functions.
+
+```php
+$square = function($n) {
+    return $n * $n;
+};
+
+echo $square(4); // Output: 16
+```
+
+### **8. Function Scope**
+
+PHP functions have their own local scope. Variables defined inside a function are not accessible outside the function.
+
+```php
+function testScope() {
+    $localVar = "I'm local";
+    echo $localVar;
+}
+
+testScope(); // Output: I'm local
+// echo $localVar; // This would cause an error
+```
+
+### **9. Global Variables**
+
+To access global variables inside a function, you need to use the `global` keyword.
+
+```php
+$globalVar = "I'm global";
+
+function showGlobal() {
+    global $globalVar;
+    echo $globalVar;
+}
+
+showGlobal(); // Output: I'm global
+```
+
+### **10. Static Variables**
+
+Static variables retain their value between function calls.
+
+```php
+function counter() {
+    static $count = 0;
+    $count++;
+    echo $count;
+}
+
+counter(); // Output: 1
+counter(); // Output: 2
+```
+
+### **11. Function Overloading**
+
+PHP does not support function overloading in the same way as some other languages. Instead, you can use default arguments and variable-length argument lists to achieve similar functionality.
+
+### **12. Recursive Functions**
+
+A recursive function is one that calls itself. This is useful for problems that can be broken down into smaller, similar problems.
+
+```php
+function factorial($n) {
+    if ($n <= 1) {
+        return 1;
+    } else {
+        return $n * factorial($n - 1);
+    }
+}
+
+echo factorial(5); // Output: 120
+```
+
+### **13. Function References**
+
+Functions in PHP are first-class citizens, meaning they can be passed as arguments and returned from other functions.
+
+```php
+function operate($a, $b, $operation) {
+    return $operation($a, $b);
+}
+
+$addition = function($x, $y) {
+    return $x + $y;
+};
+
+echo operate(5, 3, $addition); // Output: 8
+```
+
+### **14. Built-in Functions**
+
+PHP comes with a vast number of built-in functions for various tasks, such as string manipulation, array handling, and file operations.
+
+```php
+$length = strlen("Hello, World!"); // Output: 13
+```
+
+
+Functions in PHP are versatile and essential for creating modular, reusable code. They help in breaking down complex problems into smaller, manageable parts.
