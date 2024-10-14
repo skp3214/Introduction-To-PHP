@@ -1,8 +1,10 @@
-<?php 
-class Addition{
-    function __call($method, $args){
-        if($method == 'add'){
-            switch(count($args)){
+<?php
+class Addition
+{
+    function __call($method, $args)
+    {
+        if ($method == 'add') {
+            switch (count($args)) {
                 case 0:
                     return 0;
                 case 1:
@@ -12,8 +14,7 @@ class Addition{
                 default:
                     return array_sum($args);
             }
-        }
-        else{
+        } else {
             throw new Exception("Method not found");
         }
     }
@@ -22,5 +23,5 @@ class Addition{
 $obj = new Addition();
 echo $obj->add();
 echo $obj->add(1);
-echo $obj->add(1,2);
-echo $obj->add(1,2,3,4,5);
+echo $obj->add(1, 2);
+echo $obj->add(1, 2, 3, 4, 5);
