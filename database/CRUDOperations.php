@@ -3,7 +3,7 @@
 $servername="localhost";
 $username="root";
 $password="";
-$dbname="fruit";
+$dbname="test";
 
 $conn=new mysqli($servername,$username,$password,$dbname);
 
@@ -13,9 +13,9 @@ if($conn->connect_error){
 
 echo"Connected Successfully";
 
-// $sql="Insert into fruits(name,color,price) values('Orange','Orange',3.5)";
+$sql="Insert into fruits(name,color,price) values('Orange','Orange',3.5)";
 
-$sql = "DELETE from fruits where id=1";
+// $sql = "DELETE from fruits where id=1";
 
 if ($conn->query($sql) === TRUE) {
     if ($conn->affected_rows == 0) {
